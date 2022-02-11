@@ -36,7 +36,7 @@
         "react4xp-regions": "1.1.0"
     },
     "devDependencies": {
-        "@babel/cli": "^7.16.8",
+        "@babel/cli": "^7.17.0",
         "@babel/compat-data": "^7.16.8",
         "@babel/core": "^7.16.12",
         "@babel/plugin-proposal-class-properties": "^7.16.7",
