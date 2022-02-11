@@ -14,7 +14,10 @@ A simple example XP part with React rendering and a barebone page controller is 
 Requires: installed [Enonic XP 7.x](https://developer.enonic.com/) with [Gradle](https://docs.gradle.org/current/userguide/getting_started.html) and Node/NPM. 
 
 
+## Start
+To deploy and start the project in dev-mode, run: `enonic project deploy --dev`
 
+To watch (or try to watch), run: `npm run watch`
 
 
 ## Install
