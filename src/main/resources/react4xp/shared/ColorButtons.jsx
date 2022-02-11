@@ -9,7 +9,6 @@ export default ({colors, selectedIndex, clickFunc}) =>
         {colors.map( (color, i) =>
 
             <li key={i} className="color">
-                <p>testing her!!</p>
                 <Button className={`color-button${i === selectedIndex ? ' selected' : ''}`}
                         clickFunc={ ()=>clickFunc(i) }
                         style={{backgroundColor: color, borderColor: color}}
