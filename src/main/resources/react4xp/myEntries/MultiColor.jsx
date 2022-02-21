@@ -7,6 +7,8 @@ import ActiveColorOval from '../shared/ActiveColorOval';
 import './MultiColor.scss';
 import '../shared/shared-styles.scss';
 
+import StyledEngineProvider from "@mui/material/StyledEngineProvider";
+
 import IconButton from '@mui/material/IconButton';
 import PhotoCamera from '@mui/icons-material/PhotoCamera';
 
@@ -27,9 +29,11 @@ const MultiColor = (props) => {
 
     return props.colors.length ?
         <div className="multi-color">
-            <IconButton color="primary" aria-label="upload picture" component="span">
-              <PhotoCamera />
-            </IconButton>
+            <StyledEngineProvider injectFirst>
+              <IconButton color="primary" aria-label="upload picture" component="span">
+                <PhotoCamera />
+              </IconButton>
+            </StyledEngineProvider>
             <Button className="my-button" clickFunc={shiftDown}>Previous color</Button>
             <Button className="my-button" clickFunc={shiftUp}>Next color</Button>
 
