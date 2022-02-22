@@ -15,7 +15,8 @@
         "watch:all": "npm-run-all --parallel watch:gradle watch:xp watch:react4xp",
         "watch:gradle": "./gradlew deploy --info -t",
         "watch:react4xp": "webpack --env REACT4XP_CONFIG_FILE=build/react4xp_constants.json ROOT=\"$(pwd)\" ENTRY_DIRS=\"myEntries\" CHUNK_DIRS=\"shared\" OVERRIDE_COMPONENT_WEBPACK=\"webpack.config.react4xp.js\" --config node_modules/react4xp-build-components/webpack.config.js --watch",
-        "watch:xp": "babel src/main/resources --out-dir build/resources/main --ignore **/*.jsx --watch"
+        "watch:xp": "babel src/main/resources --out-dir build/resources/main --ignore **/*.jsx --watch",
+        "postinstall": "node monkeypatch.js"
     },
     "repository": {
         "type": "git",

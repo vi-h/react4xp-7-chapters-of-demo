@@ -10,10 +10,17 @@ exports.get = function (request) {
         .map(c => (c || '').trim())
         .filter(c => !!c);
 
-    return React4xp.render(
+    const res = React4xp.render(
         "MultiColor",
-        {colors},
-        request,
-        {clientRender}
+        { colors },
+        { ...request, mode: "live" },
+        { clientRender }
     );
+
+    /* if (request.mode === "edit") {
+        res.pageContributions.bodyEnd = res.pageContributions.bodyEnd.filter(c => c.indexOf("vendors") !== -1 || c.indexOf("externals") !== -1);
+    } */
+
+    log.info(JSON.stringify({ ...res, body: "" }, null, 4));
+    return res;
 };
