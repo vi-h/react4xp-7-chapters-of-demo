@@ -10,17 +10,13 @@ exports.get = function (request) {
         .map(c => (c || '').trim())
         .filter(c => !!c);
 
-    const res = React4xp.render(
-        "MultiColor",
-        { colors },
-        { ...request, mode: "live" },
-        { clientRender }
+    return React4xp.render(
+      "MultiColor",
+      { colors },
+      {
+          ...request,
+          mode: "live" // With this edit mode might behave strange for some components. Make sure to test properly.
+      },
+      { clientRender }
     );
-
-    /* if (request.mode === "edit") {
-        res.pageContributions.bodyEnd = res.pageContributions.bodyEnd.filter(c => c.indexOf("vendors") !== -1 || c.indexOf("externals") !== -1);
-    } */
-
-    log.info(JSON.stringify({ ...res, body: "" }, null, 4));
-    return res;
 };
