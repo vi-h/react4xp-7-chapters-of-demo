@@ -19,6 +19,8 @@ To deploy and start the project in dev-mode, run: `enonic project deploy --dev`
 
 To watch (or try to watch), run: `npm run watch`
 
+Running continous works better than watch: `enonic project gradle deploy --continuous`
+
 
 ## Install
 
@@ -43,8 +45,14 @@ For complete setup info, see [the react4xp introduction](https://developer.enoni
 Crash course, after getting this starter running:
 
 - Start XP
+- To test with CSP, make sure to install the "Security Headers" Application
 - Enter Content Studio
-- Add a Site. Give it a display name and activate this starter app. 
+- Add a Site. Give it a display name and activate this starter app. To test with CSP, add the "Security Headers" application
+  to the site, and configure it to have the following in the CSP field:
+   ```
+   default-src 'self'; script-src 'self' 'sha256-PgYV+wbDCgJYbGcKuv1bxTzJrFaVWEez53gYTSzKLmA='; style-src 'self' 'sha256-47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU='; 
+   ```
+  and make sure you have not built the application in development mode (ex. you have not run `enonic project gradle deploy -Pdevelopment`)
 - Select the "Default Page" page controller (and apply/save).
 
 
