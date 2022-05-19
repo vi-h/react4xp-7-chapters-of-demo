@@ -1,0 +1,11 @@
+<!-- @summary[no]: Layout med 1 kolonne. Brukes for å plassere innhold så de får konsekvent margin. -->
+<!-- @summary[en]: Layout with 1 column. It is used to position content with the correct margin. -->
+<!-- @image: images/layouts/layout-1-col.png -->
+<layout>
+    <display-name i18n="layouts.layout-1-col.display-name">1 column</display-name>
+    <description i18n="layouts.layout-1-col.description">Layout med 1 kolonne. Brukes for å plassere innhold så de får konsekvent margin.</description>
+    <form/>
+    <regions>
+        <region name="layout1" />
+    </regions>
+</layout>
