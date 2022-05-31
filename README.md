@@ -50,10 +50,20 @@ Crash course, after getting this starter running:
 - Enter Content Studio
 - Add a Site. Give it a display name and activate this starter app. To test with CSP, add the "Security Headers" application
   to the site, and configure it to have the following in the CSP field:
-   ```
-   default-src 'self'; script-src 'self' 'sha256-PgYV+wbDCgJYbGcKuv1bxTzJrFaVWEez53gYTSzKLmA='; style-src 'self' 'sha256-47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU='; 
-   ```
+  ```
+    default-src 'self';
+    base-uri 'self';
+    form-action 'self';
+    script-src 'self' 'sha256-PgYV+wbDCgJYbGcKuv1bxTzJrFaVWEez53gYTSzKLmA=';
+    object-src 'none';
+    img-src * data:;
+    style-src 'self' 'sha256-47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=';
+    font-src * data:;
+    frame-src 'self';
+  ```
   and make sure you have not built the application in development mode (ex. you have not run `enonic project gradle deploy -Pdevelopment`)
+- Make sure you also have the file `com.enonic.xp.admin.cfg` with `site.preview.contentSecurityPolicy =` in it, so
+  we only use Security Headers app CSP, as Enonics and the apps CSP do not work well together as of now.
 - Select the "Default Page" page controller (and apply/save).
 
 
