@@ -59,7 +59,7 @@ module.exports = function (env, react4xpConfigInput) {
     name: 'configExtra',
     entry: {
       main: [
-        './src/frontend-general/main.scss'
+        path.resolve(__dirname, './src/frontend-general/main.scss')
       ]
     },
     output: {
