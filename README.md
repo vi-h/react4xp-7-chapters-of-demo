@@ -18,7 +18,9 @@ Requires: installed [Enonic XP 7.x](https://developer.enonic.com/) with [Gradle]
 ## Start
 To deploy and start the project in dev-mode, run: `enonic project deploy --dev`
 
-To watch (or try to watch), run: `npm run watch`
+To use Watch, run: `npm run watch`
+New watch after using lib-react4xp v 3.2.0 works pretty good, but changes in scss files do not trigger
+new update, but by changing in jsx file after the scss changes it seems like the scss changes are also added.
 
 Running continous works better than watch: `enonic project gradle deploy --continuous`
 
